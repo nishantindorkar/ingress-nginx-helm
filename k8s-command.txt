@@ -1,0 +1,48 @@
+* kubeadm token create  --print-join-command  # print token to connet node with master
+* kubectl get services                          # List all services in the namespace
+* kubectl get pods -o wide                      # List all pods in the current namespace, with more details
+
+# Describe commands with verbose output
+* kubectl describe nodes pod_name
+* kubectl describe pods pod_name
+
+* kubectl delete --all pods # delete all pods
+* kubectl delete pod pod_name  # delete pods
+* kubectl describe rs/frontend # state of the ReplicaSet
+* kubectl logs -f pod_name  # details of pods
+* kubectl exec pod_name -c container_name -- hostname -i # to get ip 
+* kubectl exec pod_name -it -c container_name -- /bin/bash # to enter in to pod
+* kubectl get pods --show-labels   # to search labels
+* kubectl get pods -l env=dev # list pods matching a label
+* kubectl get pods -l env!=dev # list where 'dev' label is not present
+* kubectl delete pod -l env=dev # delete pod using label 'dev'
+* kubectl label pods pod_name mycity=nagpur # add label imperative
+* kubectl pods -l 'env in/notin(dev,test)' # get pods with the label of dev and test (notin for not that label)
+* kubectl delete pods -l 'env in/notin(dev,test)' # delete pods with the label of dev and test
+* kubectl describe rc pod_name #to get rc details
+* kubectl scale --replicas=8 rc -l mycit=nagpur(label) # to increase/decrease pod with rc
+* kubectl scale --replicas=1 rs/myrs 
+
+* kubectl get rs
+* kubectl delete rs mysql-pod-6c86656db7
+
+* eksctl create cluster -f cluster.yaml
+* eksctl get cluster --region=us-east-1
+* eksctl delete cluster --name=eks-cluster-samp --region=us-east-1 
+
+* kubectl logs mysql-6dd5d7c778-2xrqm --all-containers
+
+* kubectl create namespace prod
+* kubectl get deployments
+* kubectl delete deployment nginx-deployment
+* kubectl get pods --all-namespaces
+* kubectl delete pods --namespace my-namespace --all
+* kubectl delete deployments --namespace my-namespace --all
+
+
+* kubectl create secret generic db-cerds \
+  --from-file=./username.txt \
+  --from-file=./password.txt
+* kubectl get secret/db-cerds
+* kubectl describe secret/db-cerds
+
