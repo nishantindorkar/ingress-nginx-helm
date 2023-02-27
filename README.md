@@ -6,9 +6,9 @@ helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 
 helm install sample-ingress ingress-nginx/ingress-nginx -f values.yaml
 
-kubectl apply -f 011/sample-app.yaml
+kubectl apply -f sample-app.yaml
 
-dig +short www.devopsbyexample.io  #verify DNS
+dig +short nishantssl.tk  #verify DNS
 
 
 # development 
