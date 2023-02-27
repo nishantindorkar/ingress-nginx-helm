@@ -1,0 +1,12 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: eks-cluster-new
+  region: us-east-1
+nodeGroups:
+- name: node-new
+  labels:
+      roles: worker
+  instanceType: t3.large
+  volumeSize: 50
+  desiredCapacity: 2
