@@ -8,6 +8,8 @@ helm install sample-ingress ingress-nginx/ingress-nginx -f values.yaml
 
 kubectl apply -f sample-app.yaml
 
+kubectl apply -f sample-hello-v2.yaml
+
 dig +short nishantssl.tk  #verify DNS
 
 
