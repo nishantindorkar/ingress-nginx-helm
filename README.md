@@ -12,9 +12,12 @@ dig +short nishantssl.tk  #verify DNS
 
 
 # development 
+
 kubectl get deployments -n sample
+
 kubectl delete deployment sample-hello -n sample
 
 # clean up
 helm repo remove ingress-nginx
+
 eksctl delete cluster -f new-cluster.yaml
